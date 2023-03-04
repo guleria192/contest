@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import axios from 'axios'
 import { SEARCH_VAL } from '../../redux/Action'
 import { useNavigate } from 'react-router-dom'
 import './Home.css'
-// import { useNavigate } from 'react-router-dom'
 
 
 
 
-const Home = ({setLoc,setCondition,setTempc,setTempf,setHumi}) => {
+
+const Home = () => {
 
 
     const navigate = useNavigate()
@@ -24,7 +24,7 @@ const Home = ({setLoc,setCondition,setTempc,setTempf,setHumi}) => {
 
     //  console.log(name);
     const key = "e6231e8c8aa849bca5a52717230403"
-    const store = useSelector((state) => state)
+    // const store = useSelector((state) => state)
     // console.log(store);
     const dispatch = useDispatch()
 
@@ -35,11 +35,6 @@ const Home = ({setLoc,setCondition,setTempc,setTempf,setHumi}) => {
         .then(resp => {
           console.log(resp);
           // console.log(resp.data.location.name);
-          setLoc(resp.data.location.name)
-          setCondition(resp.data.current.condition.text)
-          setTempc(resp.data.current.temp_c)
-          setTempf(resp.data.current.temp_f)
-          setHumi(resp.data.current.humidity)
           // console.log(resp.data.current.condition.text);
           // console.log(resp.data.current.temp_c);
           // console.log(resp.data.current.temp_f);

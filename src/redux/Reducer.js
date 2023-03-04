@@ -7,7 +7,7 @@ export const reducer = (state,action) => {
         case SEARCH_VAL : 
             val = action.payload.location
         return {...state, loation : val }
-        // return {...state, loation :  action.payload.location}
+       
 
          
     
